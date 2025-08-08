@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Raksha Dhaga</title>
+</head>
+<body>
+    <h1>Happy Raksha Bandhan!</h1>
+    <form action="/submit" method="post" th:object="${rakhiMessage}">
+        Sister Name: <input type="text" th:field="*{sisterName}" required><br>
+        Brother Name: <input type="text" th:field="*{brotherName}" required><br>
+        <button type="submit">Send Rakhi</button>
+    </form>
+</body>
+</html>
