@@ -2,10 +2,68 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Rakhi Sent</title>
+    <style>
+        body {
+            background-image: url('/raksha-bandhan-background-with-love-and-blessings_XDWM.jpg'); /* Replace with your HD image path */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rakhi-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .rakhi-container h2 {
+            color: #b30059;
+            margin-bottom: 10px;
+        }
+
+        .rakhi-container h1 {
+            color: #99004d;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .rakhi-image {
+            width: 300px;
+            margin-top: 20px;
+            transition: transform 0.5s;
+        }
+
+        .rakhi-image:hover {
+            transform: scale(1.1);
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #cc0066;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
-    <h2>Rakhi Sent to:</h2>
-    <h1 th:text="${brotherName}"></h1>
-    <img src="/images/rakhi.png" alt="Rakhi" style="width:300px;">
+    <div class="rakhi-container">
+        <h2>🎉 Rakhi Sent Successfully 🎉</h2>
+        
+        <div class="message" th:text="'From ' + ${sisterName} + ' to ' + ${brotherName}"></div>
+    </div>
 </body>
 </html>

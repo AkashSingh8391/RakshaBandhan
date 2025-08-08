@@ -23,6 +23,8 @@ public class MainController {
     public String submitForm(@ModelAttribute RakhiMessage rakhiMessage, Model model) {
         repository.save(rakhiMessage);
         model.addAttribute("brotherName", rakhiMessage.getBrotherName());
+        model.addAttribute("sisterName", rakhiMessage.getSisterName());
+
         return "rakhi";
     }
 }
